@@ -15,11 +15,16 @@ import android.widget.Toast;
 import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
+import com.gebeya.mahmai.movie_theatre_admin.ticketModel.Ticket;
 import com.google.zxing.Result;
 
-public class ScanQRActivity extends AppCompatActivity {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import timber.log.Timber;
+
+public class ScanQRActivity extends BaseActivity {
     CodeScanner mCodeScanner;
-    String ticketId = null;
     private boolean backPressedOnce = false;
 
     @Override
@@ -52,8 +57,10 @@ public class ScanQRActivity extends AppCompatActivity {
                 ScanQRActivity.this.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Toast.makeText(ScanQRActivity.this, result.getText(), Toast.LENGTH_SHORT).show();
-                        ticketId = result.getText();
+//                        Toast.makeText(ScanQRActivity.this, result.getText(), Toast.LENGTH_SHORT).show();
+                        if (result.getText() != null) {
+                            confirmTicket(result.getText());
+                        }
                     }
                 });
             }
@@ -107,5 +114,28 @@ public class ScanQRActivity extends AppCompatActivity {
                 backPressedOnce = false;
             }
         }, 2000);
+    }
+
+    private void confirmTicket(String ticketId) {
+        toast("1");
+        TicketServices services = ServiceBuilder.buildService(TicketServices.class);
+        Call<Ticket> call = services.confirmTicket("Bearer Ss6E3X/KTCpMFJSBB9MKAijnnlOnq5kLyYOZymmyIXU= ",ticketId);
+        call.enqueue(new Callback<Ticket>() {
+            @Override
+            public void onResponse(@NonNull Call<Ticket> call, @NonNull Response<Ticket> response) {
+                toast("11");
+                try{
+                    toast(""+response.body().getPurchased());
+                }catch (NullPointerException ex){
+                    Timber.e(ex, " ---- Null Exception in confirmTicket() ---- ");
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Ticket> call, @NonNull Throwable t) {
+                toast("22");
+                Timber.e(t, " ---- onFailure() ----");
+            }
+        });
     }
 }

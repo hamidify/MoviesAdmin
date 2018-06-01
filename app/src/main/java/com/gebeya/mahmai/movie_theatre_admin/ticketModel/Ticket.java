@@ -16,7 +16,7 @@ public class Ticket {
     private String dateCreated;
     @SerializedName("showtime")
     @Expose
-    private com.gebeya.mahmai.movie_theatre_admin.Showtime showtime;
+    private Showtime showtime;
     @SerializedName("user")
     @Expose
     private String user;
@@ -37,7 +37,7 @@ public class Ticket {
     private List<String> seatNumber = null;
     @SerializedName("reservation")
     @Expose
-    private com.gebeya.mahmai.movie_theatre_admin.Reservation reservation;
+    private Reservation reservation;
 
     public String getId() {
         return id;
@@ -63,11 +63,11 @@ public class Ticket {
         this.dateCreated = dateCreated;
     }
 
-    public com.gebeya.mahmai.movie_theatre_admin.Showtime getShowtime() {
+    public Showtime getShowtime() {
         return showtime;
     }
 
-    public void setShowtime(com.gebeya.mahmai.movie_theatre_admin.Showtime showtime) {
+    public void setShowtime(Showtime showtime) {
         this.showtime = showtime;
     }
 
@@ -119,11 +119,11 @@ public class Ticket {
         this.seatNumber = seatNumber;
     }
 
-    public com.gebeya.mahmai.movie_theatre_admin.Reservation getReservation() {
+    public Reservation getReservation() {
         return reservation;
     }
 
-    public void setReservation(com.gebeya.mahmai.movie_theatre_admin.Reservation reservation) {
+    public void setReservation(Reservation reservation) {
         this.reservation = reservation;
     }
 

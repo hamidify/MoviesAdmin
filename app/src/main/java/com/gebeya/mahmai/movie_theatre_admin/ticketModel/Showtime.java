@@ -1,5 +1,5 @@
 
-package com.gebeya.mahmai.movie_theatre_admin;
+package com.gebeya.mahmai.movie_theatre_admin.ticketModel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -29,7 +29,7 @@ public class Showtime {
     private Boolean archived;
     @SerializedName("show")
     @Expose
-    private com.gebeya.mahmai.movie_theatre_admin.Show show;
+    private Show show;
 
     public String getId() {
         return id;
@@ -87,11 +87,11 @@ public class Showtime {
         this.archived = archived;
     }
 
-    public com.gebeya.mahmai.movie_theatre_admin.Show getShow() {
+    public Show getShow() {
         return show;
     }
 
-    public void setShow(com.gebeya.mahmai.movie_theatre_admin.Show show) {
+    public void setShow(Show show) {
         this.show = show;
     }
 
