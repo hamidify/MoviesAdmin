@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<dimen name="padding_top">24dp</dimen>
+<dimen name="padding">12dp</dimen>
+<dimen name="margin_bn_placeholder">14dp</dimen>
+<dimen name="sign_up_text_size">16sp</dimen>
+<dimen name="hall_name_size">16sp</dimen>w
+<dimen name="activate_text_size">20sp</dimen>
+<dimen name="cinema_number">32sp</dimen>
+<dimen name="margin_card">8dp</dimen>
+<dimen name="placeholder_padding">8dp</dimen>
+<dimen name="nav_view_separator">6sp</dimen>
+        <!-- Default screen margins, per the Android Design guidelines. -->
+        <dimen name="activity_horizontal_margin">16dp</dimen>
+<!--For Tab Views-->
+<dimen name="activity_vertical_margin">16dp</dimen>
+<dimen name="tab_max_width">264dp</dimen>
+<dimen name="tab_label">14sp</dimen>
+<dimen name="custom_tab_layout_height">72dp</dimen>
+<dimen name="card_height">195dp</dimen>
+<dimen name="card_height_resrved">200dp</dimen>
+<dimen name="logo_height">50dp</dimen>
+
+<dimen name="image_view_width">100dp</dimen>
+<dimen name="image_view_height">135dp</dimen>
+<dimen name="image_view_reserved">145dp</dimen>
+<dimen name="card_height_resrved_view">225dp</dimen>
+<dimen name="image_view_for_reserved">170dp</dimen>
+<dimen name="drawer_width">250dp</dimen>
+<dimen name="drawer_header_padding">30dp</dimen>
+<dimen name="drawer_header_height">178dp</dimen>
+<dimen name="drawer_item_padding_left">20dp</dimen>
+<dimen name="drawer_header_image_dimen">64dp</dimen>
+<dimen name="zero_length">0dp</dimen>
+<dimen name="movie_image_padding">4dp</dimen>
+<dimen name="upcoming_view_height">150dp</dimen>
+<dimen name="icons_height">24dp</dimen>
+</resources>
